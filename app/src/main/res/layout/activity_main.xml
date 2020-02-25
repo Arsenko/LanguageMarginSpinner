@@ -11,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/lanSpinner"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,10 +20,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/change"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="123dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lanSpinner"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Spinner
+        android:id="@+id/MarginSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/styleSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/lanBut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lanSpinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

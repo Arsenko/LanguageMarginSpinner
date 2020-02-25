@@ -6,4 +6,9 @@
         <item>en</item>
         <item>ru</item>
     </string-array>
+    <string-array name="styleSpinner">
+        <item>Малый отступ</item>
+        <item>Средний отступ</item>
+        <item>Большой отступ</item>
+    </string-array>
 </resources>

@@ -12,17 +12,19 @@ import android.widget.Toast;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    Spinner lanSpinner;
+    Spinner lanSpinner,marginSpinner;
     Button lanBut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
         init();
     }
 
     private void init(){
+        marginSpinner=findViewById(R.id.MarginSpinner);
         lanSpinner=findViewById(R.id.lanSpinner);
         lanBut=findViewById(R.id.lanBut);
         lanBut.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +45,21 @@ public class MainActivity extends AppCompatActivity {
                 Configuration config = new Configuration();
                 config.setLocale(locale);
                 getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-                recreate();
+
+                switch (marginSpinner.getSelectedItem().toString()){
+                    case "Малый отступ":
+                    case "Little margin":
+                        Utils.changeToTheme(MainActivity.this,1);
+                        break;
+                    case "Средний отступ":
+                    case "Medium margin":
+                        Utils.changeToTheme(MainActivity.this,2);
+                        break;
+                    case "Большой отступ":
+                    case "Large margin":
+                        Utils.changeToTheme(MainActivity.this,3);
+                        break;
+                }
             }
         });
     }
